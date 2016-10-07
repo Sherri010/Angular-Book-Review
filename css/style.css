@@ -1,4 +1,11 @@
 
+
+.details{
+  font-weight: bold;
+  font-size: 16px;
+  color:green;
+  text-align: center;
+}
 .img-thumbnail{
   width:200px;
 }

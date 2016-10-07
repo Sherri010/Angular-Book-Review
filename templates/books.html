@@ -1,0 +1,10 @@
+    <div ng-controller="BookIndexController as bookcontrol">
+      <div class="row">
+        <div ng-repeat="book in bookcontrol.books" class="panel panel-default col-md-3">
+           <img class="img-thumbnail" ng-src={{book.image}}>
+           <p><a class="details" ng-href="books/{{book._id}}">{{book.title}}</a></p>
+           <p><strong>By</strong> {{book.author}}</p>
+           <p><strong>Relased on:</strong> {{book.releaseDate}}</p>
+        </div>
+      </div>
+    </div>
