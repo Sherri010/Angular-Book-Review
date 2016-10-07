@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" ng-app="tunely">
+<html lang="en" ng-app="BookReview">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,20 +8,35 @@
     <title>Book Reviews</title>
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="js/app.js"></script>
 
   </head>
   <body>
-
+   <div>
+   <h1> Books </h1>
+   </div>
+  <div class="container">
+    <div ng-controller="BookIndexController as bookcontrol">
+      <div class="row">
+        <div ng-repeat="book in bookcontrol.books" class="panel panel-default col-md-3">
+           <img class="img-thumbnail" ng-src={{book.image}}>
+           <p><strong>Title:</strong> {{book.title}}</p>
+           <p><strong>By</strong> {{book.author}}</p>
+           <p><strong>Relased on:</strong> {{book.releaseDate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 
 </html>
